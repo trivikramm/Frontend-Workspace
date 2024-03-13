@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Application Form</title>
+  <link rel="stylesheet" type="text/css" href="form_css.css">
+</head>
+<body  align="center">
+  <fieldset  id="jobForm">
+    <form action="process_form.php" method="post" enctype="multipart/form-data">
+      <h1>JOB APPLICATION</h1>
+      <fieldset>
+      <legend align="center">Details</legend>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Your Name"><br><br>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Your email"><br><br>
+
+      <label for="phno">Phone Number:</label>
+      <input type="tel" id="phno" name="phno" placeholder="Your Number" value="+91" maxlength="13"><br><br>
+
+      <label for="passw">Password:</label>
+      <input type="password" id="passw" name="password" placeholder="Create new password"><br><br>
+
+      <label for="dob">DOB:</label>
+      <input type="date" id="dob" name="dob"><br><br>
+
+      <label for="skills"><strong>Communication Skills:</strong></label><br>
+      <input type="range" id="skills" name="skills"><br>
+    </fieldset> 
+
+      <fieldset>
+        <legend align="center">Address</legend>
+        <textarea name="address" placeholder="Your Address"></textarea><br>
+      </fieldset>
+
+      <fieldset>
+        <legend align="center">City</legend>
+        <select name="city">
+          <option value="Delhi">Delhi</option>
+          <option value="Delhi">Bangalore</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Kolkata">Kolkata</option>
+          <option value="Chennai">Chennai</option>
+        </select><br>
+      </fieldset>
+
+      <fieldset>
+        <legend align="center">Gender</legend>
+        
+          <input type="radio" name="gender" value="Male"> Male<br>
+          <input type="radio" name="gender" value="Female"> Female
+        
+      </fieldset>
+
+      <fieldset>
+        <legend align="center">Course</legend>
+        <input type="checkbox" name="course[]" value="Java"> Java<br>
+        <input type="checkbox" name="course[]" value="Python"> Python<br>
+        <input type="checkbox" name="course[]" value="Web Development"> Web Development<br>
+      </fieldset>
+
+      <fieldset>
+        <legend align="center">Upload Resume:</legend>
+        <input type="file" name="Resume" accept=".doc,.docx,.pdf,.png,.jpg">
+      </fieldset>
+
+      <input type="reset">
+      <button type="submit">Submit Application</button>
+    </form> 
+  </fieldset>
+</body>
+</html>
