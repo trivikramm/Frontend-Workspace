@@ -2,7 +2,7 @@
 // Database connection details
 $servername = "localhost:3306";
 $username = "root";
-$password = "Mani@100699";
+$password = "YOUR_PASSWORD";
 $dbname = "form_data";
 
 // Create connection
