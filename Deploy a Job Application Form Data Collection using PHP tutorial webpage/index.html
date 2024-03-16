@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form data collection using php</title>
+    <style>
+        #marquee1{
+            color: blue;
+            font-size: large;
+        }
+        ul{
+            font-size: 20px;;
+        }
+        fieldset{
+            font-size: 18px;
+            background-color: rgb(230, 157, 157);
+        }
+        p{
+            font-size: 18px;
+        }
+        #contact {
+            background-color: lightblue; /* Change the background color to lightblue */
+            padding: 5px; /* Add some padding for better spacing */
+            margin: 5px; /* Add margin to separate it from surrounding elements */
+            border: 2px solid #ccc; /* Add border to fieldsets */
+            border-radius: 10px; /* Add rounded corners to fieldsets */
+        }
+        body {
+            background-color: white;
+            font-family: 'Courier New', Courier, monospace; /* Change font family for better readability */
+        }
+
+h1 {
+    color: red;
+    text-align: center;
+}
+
+fieldset {
+    margin: 20px 0; /* Add more vertical space between fieldsets */
+    padding: 20px; /* Increase padding for better spacing */
+    border: 2px solid #ccc; /* Add border to fieldsets */
+    border-radius: 10px; /* Add rounded corners to fieldsets */
+}
+form {
+  text-align: center;
+}
+form h2 {
+  margin-bottom: 10px;
+}
+.container {
+  text-align: center;
+}
+
+</style>
+</head>
+<body>
+    <marquee bgcolor="white" align="center" width="100%" height="20px" direction="right" scrollamount="8" loop="3000" id="marquee1"><strong>****Job Application Form Data Collection using PHP****</strong></marquee>
+    <h1>Job Application Form Data Collection using PHP</h1>
+    <h2>Agenda:</h2>
+    <ul type="square">
+        <li><a href="#a">Form creation using HTML, CSS</a></li>
+        <li><a href="#b">Connect the backend using PHP</a></li>
+        <li><a href="#c">Store the form data using MySQL Server</a></li>
+        <li><a href="#d">Introduction to XAMPP</a></li>
+        <li><a href="#e">Deploying the website  to a Apache web server using XAMPP</a></li>
+        <li><a href="#f">Conclusion</a></li>
+    </ul>
+    <section id="a">
+    <h2>Form creation using HTML, CSS</h2>
+    
+    <p>We all know that, you can structure the webpage as you like by using <b>Hyper Text Markup Language (HTML)</b>.<br>  
+        You can see the Job Application Form in the below code using HTML and CSS.<br> <b>Cascading Style Sheets(CSS)</b> adds the different styles for your HTML.<br> HTML without CSS is not beautiful. CSS makes HTML beautiful.
+    </p>
+    <fieldset>
+          <strong>HTML Code:</strong>      
+          <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang="en"&gt;
+            &lt;head&gt;
+              &lt;meta charset="UTF-8"&gt;
+              &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+              &lt;title&gt;Job Application Form&lt;/title&gt;
+              &lt;link rel="stylesheet" type="text/css" href="form_css.css"&gt;
+            &lt;/head&gt;
+            &lt;body  align="center"&gt;
+              &lt;fieldset  id="jobForm"&gt;
+                &lt;form action="process_form.php" method="post" enctype="multipart/form-data"&gt;
+                  &lt;h1&gt;JOB APPLICATION&lt;/h1&gt;
+                  &lt;fieldset&gt;
+                  &lt;legend align="center"&gt;Details&lt;/legend&gt;
+                  &lt;label for="name"&gt;Name:&lt;/label&gt;
+                  &lt;input type="text" id="name" name="name" placeholder="Your Name"&gt;&lt;br&gt;&lt;br&gt;
+            
+                  &lt;label for="email"&gt;Email:&lt;/label&gt;
+                  &lt;input type="email" id="email" name="email" placeholder="Your email"&gt;&lt;br&gt;&lt;br&gt;
+            
+                  &lt;label for="phno"&gt;Phone Number:&lt;/label&gt;
+                  &lt;input type="tel" id="phno" name="phno" placeholder="Your Number" value="+91" maxlength="13"&gt;&lt;br&gt;&lt;br&gt;
+            
+                  &lt;label for="passw"&gt;Password:&lt;/label&gt;
+                  &lt;input type="password" id="passw" name="password" placeholder="Create new password"&gt;&lt;br&gt;&lt;br&gt;
+            
+                  &lt;label for="dob"&gt;DOB:&lt;/label&gt;
+                  &lt;input type="date" id="dob" name="dob"&gt;&lt;br&gt;&lt;br&gt;
+            
+                  &lt;label for="skills"&gt;&lt;strong&gt;Communication Skills:&lt;/strong&gt;&lt;/label&gt;&lt;br&gt;
+                  &lt;input type="range" id="skills" name="skills"&gt;&lt;br&gt;
+                &lt;/fieldset&gt;
+            
+                  &lt;fieldset&gt;
+                    &lt;legend align="center"&gt;Address&lt;/legend&gt;
+                    &lt;textarea name="address" placeholder="Your Address"&gt;&lt;/textarea&gt;&lt;br&gt;
+                  &lt;/fieldset&gt;
+            
+                  &lt;fieldset&gt;
+                    &lt;legend align="center"&gt;City&lt;/legend&gt;
+                    &lt;select name="city"&gt;
+                      &lt;option value="Delhi"&gt;Delhi&lt;/option&gt;
+                      &lt;option value="Delhi"&gt;Bangalore&lt;/option&gt;
+                      &lt;option value="Mumbai"&gt;Mumbai&lt;/option&gt;
+                      &lt;option value="Kolkata"&gt;Kolkata&lt;/option&gt;
+                      &lt;option value="Chennai"&gt;Chennai&lt;/option&gt;
+                    &lt;/select&gt;&lt;br&gt;
+                  &lt;/fieldset&gt;
+            
+                  &lt;fieldset&gt;
+                    &lt;legend align="center"&gt;Gender&lt;/legend&gt;
+            
+                      &lt;input type="radio" name="gender" value="Male"&gt; Male&lt;br&gt;
+                      &lt;input type="radio" name="gender" value="Female"&gt; Female
+            
+                  &lt;/fieldset&gt;
+            
+                  &lt;fieldset&gt;
+                    &lt;legend align="center"&gt;Course&lt;/legend&gt;
+                    &lt;input type="checkbox" name="course[]" value="Java"&gt; Java&lt;br&gt;
+                    &lt;input type="checkbox" name="course[]" value="Python"&gt; Python&lt;br&gt;
+                    &lt;input type="checkbox" name="course[]" value="Web Development"&gt; Web Development&lt;br&gt;
+                  &lt;/fieldset&gt;
+            
+                  &lt;fieldset&gt;
+                    &lt;legend align="center"&gt;Upload Resume:&lt;/legend&gt;
+                    &lt;input type="file" name="Resume" accept=".doc,.docx,.pdf,.png,.jpg"&gt;
+                  &lt;/fieldset&gt;
+            
+                  &lt;input type="reset"&gt;
+                  &lt;button type="submit"&gt;Submit Application&lt;/button&gt;
+                &lt;/form&gt;
+              &lt;/fieldset&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+            </pre>
+    </fieldset>
+    <fieldset>
+          <strong>CSS Code:</strong>  
+          <pre>
+            body{
+              background-color: #f3c6c6;
+              font-family: 'Courier New', Courier, monospace;
+          }
+          h1{
+              color: red;
+              font-family: 'Courier New', Courier, monospace;
+          }
+          #jobForm {
+              border: 5px solid #f60505; /* Example border style */
+              padding: 10px; /* Add some padding for better spacing */
+          }
+          
+          fieldset {
+              margin: 10px;
+              padding: 10px;
+              border: 0px solid #ccc;
+          }
+  
+          legend {
+              font-weight: bold;
+          }
+  
+          label {
+              display : inline-block;
+              width: 100px;
+              margin-right: 10px;
+          }
+  
+          input[type="text"], input[type="email"], input[type="tel"], input[type="password"], input[type="date"] {
+              width: 250px; height: 25px;
+          }
+  
+          input[type="radio"], input[type="checkbox"] {
+              margin-right: 10px;
+          }
+  
+          textarea {
+              width: 250px;
+              height: 100px;
+          }
+  
+          input[type="submit"], input[type="reset"] {
+              margin-top: 10px;
+              padding: 5px 10px;
+              border: 1px solid #ccc;
+              background-color: #eee;
+              cursor: pointer;
+              font-family: 'Courier New', Courier, monospace;
+          }
+  
+          input[type="submit"]:hover, input[type="reset"]:hover {
+              background-color: #ccc;
+          }
+  
+          input[type="range"] {
+              /* General styles for all range inputs */
+              -webkit-appearance: none; /* Remove default appearance (works in Chrome, Safari, etc.) */
+              appearance: none; /* Remove default appearance (works in Firefox) */
+              width: 11%; /* Adjust width as needed */
+              height: 10px; /* Adjust height as needed */
+              background: white; /* Background color for the track */
+              border-radius: 5px; /* Add rounded corners */
+          }
+          
+          input[type="range"]::-webkit-slider-thumb {
+              /* Style the thumb (the draggable part) */
+              -webkit-appearance: none; /* Remove default appearance */
+              appearance: none; /* Remove default appearance */
+              width: 20px; /* Adjust width as needed */
+              height: 20px; /* Adjust height as needed */
+              border-radius: 50%; /* Make the thumb round */
+              background: red; /* Set the thumb color to red */
+              cursor: pointer; /* Indicate draggable behavior */
+          }
+          </pre>    
+        </fieldset>
+    </section>
+    <section id="b">
+        <h2>Connect the backend using PHP</h2>
+        <p>
+          PHP is a general-purpose scripting language that is especially suited for web development.<br> It is a server-side language, which means that it is executed on the server before the web page is sent to the client's browser.<br>This is a simple example of connecting your HTML form.<br>
+ It is easy to learn and use, and it has a wide range of features that make it a powerful tool for creating dynamic and interactive websites.
+        </p>
+        <fieldset>
+          <pre>
+      &lt;?php
+      // Database connection details
+      $servername = "localhost:3306";
+      $username = "root";
+      $password = "YOUR_PASSWORD";
+      $dbname = "DATABASE_NAME";
+
+      // Create connection
+      $conn = new mysqli($servername, $username, $password, $dbname);
+
+      // Check connection
+      if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+      }
+
+      // Check if form is submitted
+     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+         // Retrieve form data
+         $name = $_POST["name"];
+         $email = $_POST["email"];
+         $phno = $_POST["phno"];
+         $password = $_POST["password"];
+         $dob = $_POST["dob"];
+         $skills = $_POST["skills"];
+         $gender = $_POST["gender"];
+         $courses = implode(", ", $_POST["course"]);
+
+         // Store file name
+         $resume_filename = $_FILES["Resume"]["name"];
+
+         // Prepare and bind SQL statement
+         $stmt = $conn->prepare("INSERT INTO applications (name, email, phno, password, dob, skills, gender, courses, resume_path) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+         $stmt->bind_param("sssssisss", $name, $email, $phno, $password, $dob, $skills, $gender, $courses, $resume_path);
+
+         // Execute SQL statement
+         if ($stmt->execute() === TRUE) {
+            echo "Application submitted successfully!";
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+
+        // Close statement and connection
+        $stmt->close();
+        $conn->close();
+    } else {
+        // If form is not submitted, redirect user to the form page
+        header("Location: form.html");
+        exit;
+    }
+    ?></pre></fieldset>
+    </section>
+    <section id="c">
+    <h2>Store the Job Application Form Data using MySQL Server</h2>
+    <p>
+      MySQL is a free and open-source relational database management system (RDBMS) that has been around for over 30 years.<br> It is a powerful and versatile database system that can be used to store and manage data for a wide variety of applications.<br> It is known for its reliability, performance, and ease of use.<br> MySQL is used by many large companies, including Google, Facebook, and Amazon.<br> It is one of the most popular databases in the world, and it is used by businesses of all sizes.<br>
+      You can download MySQL from the MySQL website. Once you have downloaded MySQL, you can install it on your computer or server.<br>Once MySQL is installed, you can connect to it using a MySQL client, such as MySQL Workbench.<br>You can add MySQL Workbench and login by credentials which you created while installing MySQL.<br> You can create a new database and a table to store the Job Applicatio Form Data.<br> You can then insert data into the table using the MySQL client.<br> This demonstrates how to use MySQL to store the Job Application Form Data.
+    </p>
+    </section>
+    <section id="d">
+    <h2>Introduction to XAMPP</h2>
+    <p> XAMPP is a free and open-source cross-platform web application development environment that includes Apache, MySQL, PHP, and Perl.<br> It is available for Windows, Linux, and macOS.<br>
+      XAMPP is a popular choice for web developers because it is easy to install and use.<br> It is designed to make it easy to develop and test web applications locally.<br> XAMPP is easy to install and use, and it is a great tool for learning web development.<br> It combines these technologies in one place, including:<br>
+      <ul><li>Apache HTTP Server</li>
+        <li>MariaDB database</li>
+        <li>Interpreters for scripts written in PHP and Perl</li>
+        <li>OpenSSL</li>
+        <li>phpMyAdmin</li>
+        <li>MediaWiki</li>
+        <li>Joomla</li>
+        <li>WordPress</li></ul></p>
+    </section>
+    <section id="e">
+    <h2>Deploying the website to a Apache web server using XAMPP</h2>
+    <p>To deploy the website to a Apache web server using XAMPP, you will need to do the following steps:<br>
+      1. Install XAMPP on your computer.<br>
+      2. Open the XAMPP control panel.<br>
+      3. Start the Apache and MySQL servers.<br>
+      4. Copy the website files to the XAMPP htdocs directory.<br>
+      5. Open a web browser and navigate to http://localhost.<br>
+      6. You should see the website displayed in your browser.<br>
+      7. You can now make changes to the website and test them locally by entering http://localhost/index.html in your browser.<br>
+      8. Another way to hosting your website is when you are ready to deploy the website to a live server, you can upload the files to a web hosting provider.<br>
+      9. You can then access the website by visiting the domain name or IP address of your web hosting account.<br>
+      10. You can now manage your website using the XAMPP control panel.<br></p>
+      
+        <img src="C:\Users\trivi\Downloads\Documents\Desktop\HTML\library\jaf.png"  width="80%" alt="Job Application Form">
+    
+    </section>
+    <section id="f">
+    <h2>Conclusion</h2>
+    <p>
+    In this tutorial we have created an HTML form for a Job Application and connected it to a MySQL database using PHP. We have also deployed the website to a Apache web server using XAMPP.
+     In this tutorial we have learned how to create an HTML form, connect it to a MySQL database using PHP, and deploy the website to a Apache web server using XAMPP. This is a basic tutorial, but it provides a good foundation for learning more about web development.
+    In this tutorial we have created an HTML form that collects data from users about their job application. We then used PHP to process the form data and store it in a MySQL database. Finally, we deployed the website to a Apache web server using XAMPP.
+</p>
+</section>
+
+<div class="container">
+  <form id="subscriptionForm">
+    <h2>Subscribe to Our Newsletter</h2>
+    <input type="email" id="email" placeholder="Enter your email address">
+    <button type="submit">Subscribe</button>
+  </form>
+  <p id="successMessage" style="display: none;">You are subscribed successfully</p>
+</div>
+
+
+
+
+
+<fieldset>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p><b>Address:</b>Banglore, Karnataka, India
+        <br><b>Phone:</b> +91-8179048058<br> <b>Email:</b> trivikram100699@gmail.com</p>
+</section>
+</fieldset>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('subscriptionForm');
+  const successMessage = document.getElementById('successMessage');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+
+    // You can perform validation here if needed
+
+    // Display success message
+    successMessage.style.display = 'block';
+
+    // Optional: Reset the form
+    form.reset();
+  });
+});
+
+</script>
+</body>
+</html>
