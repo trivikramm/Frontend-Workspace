@@ -170,7 +170,7 @@ a {
 }
 
 /* Mobile-specific styles */
-/*@media(max-width: 767px) {
+@media(max-width: 767px) {
     .columns, .handles {
         flex-direction: column;
         text-align: center;
@@ -200,4 +200,4 @@ a {
         font-size: 16px;
         padding: 0 10px;
     }
-}*/
+}
