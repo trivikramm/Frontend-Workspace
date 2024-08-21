@@ -1,0 +1,203 @@
+
+:root {
+    --superhero: 'Bangers', cursive;
+    --fantasy: 'MedievalSharp', cursive;
+    --space: 'Orbitron', sans-serif;
+    --military: 'Black Ops One', cursive;
+    --romantic: 'La Belle Aurore', cursive;
+    --scary: 'Creepster', cursive;
+    --cowboy: 'Rye', cursive;
+    --regular: sans-serif;
+    --fantasy: 'MedievalSharp', cursive;
+    --font: var(--regular);
+    --sharp: 0;
+    --soft: 10px;
+    --round: 100px;
+    
+    --image: var(--soft);
+    
+    --background: #f5f5f5;
+    --text: #222222;
+    
+    --light: var(--background);
+    --dark: var(--text);
+}
+
+
+body, html {
+    margin: 0;
+    padding: 10px;
+    background: var(--background);
+    color: var(--text);
+    font-family: var(--font);
+}
+
+/* Flexbox columns for profile and name */
+.columns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(34, 114, 149);
+    color: white;
+    padding: 20px;
+    border: 5px solid rgb(255, 183, 0);
+    margin: 0 auto;
+}
+
+/* Flexbox column items */
+.column {
+    padding: 10px;
+}
+
+/* Profile image styling */
+img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+/* Intro and other sections styling */
+.intro {
+    margin: 10px 300px;
+    padding: 15px;
+    border: 5px solid rgb(34, 114, 149);
+    text-align: justify;
+}
+
+/* Handles section styling */
+.handles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(34, 114, 149);
+    color: white;
+    padding: 20px;
+    border: 5px solid rgb(255, 183, 0);
+    margin: 0 auto;
+}
+
+.handle {
+    padding: 15px;
+}
+
+/* Contact section styling */
+.contacts {
+    
+    border: 5px solid rgb(255, 183, 0);
+    background-color: rgb(34, 114, 149);
+    color: white;
+    text-align: left;
+    margin: 0 auto;
+}
+
+/* Join section styling */
+.join {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 20px;
+    color: white;
+    width: fit-content;
+    border-radius: var(--soft);
+}
+
+input, button {
+    margin: 10px 0;
+    width: 200px; /* Adjust width as needed */
+}
+
+input {
+    display: block;
+    margin: 20px 0 0;
+    width: 160px;
+    box-sizing: border-box;
+    padding: 4px 8px;
+    border-width: 1px; 
+    border-style: solid;
+    border-color:  var(--text);
+    color: var(--text);
+    background: none;
+    border-radius: var(--image);
+    font-family: var(--font);
+}
+::placeholder {
+    color: var(--text);
+}
+button {
+    border-radius: var(--image);
+    padding: 5px 10px;
+    border: none;
+    background: var(--text);
+    color: var(--background);
+    font-weight: bold;
+    box-sizing: border-box;
+    display: block;
+    margin: 8px 0;
+    cursor: pointer;
+    font-family: var(--font);
+    width: 160px;
+}
+/* Heading styles */
+.h1-style h1 {
+    text-align: left;
+    padding: 10px;
+}
+
+a {
+    color: white;
+}
+
+/* Responsive design using media queries */
+@media(min-width: 768px) {
+    .columns, .handles {
+        flex-direction: row;
+        justify-content: center;
+        text-align: justify;
+    }
+
+    .column, .handle {
+        padding: 0 20px;
+    }
+
+    .contacts {
+        margin: 10px 0px;
+        padding: 20px;
+    }
+}
+
+/* Mobile-specific styles */
+/*@media(max-width: 767px) {
+    .columns, .handles {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro, .contacts {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+    }
+
+    h1 {
+        font-size: 24px;
+        padding: 0 20px;
+    }
+
+    .h1-style h1 {
+        font-size: 20px;
+        padding: 0 10px;
+    }
+
+    p {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+}*/
