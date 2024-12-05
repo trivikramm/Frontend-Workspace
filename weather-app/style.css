@@ -1,0 +1,223 @@
+:root {
+    --primary-color: #2196F3;
+    --secondary-color: #64B5F6;
+    --background-color: #f5f6f8;
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+input[type="text"] {
+    padding: 10px 15px;
+    border: 2px solid var(--primary-color);
+    border-radius: 25px;
+    width: 300px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+}
+
+.suggestions-dropdown {
+    position: absolute;
+    top: 45px;
+    left: 37%; /* Center horizontally */
+    transform: translateX(-50%); /* Offset by half width */
+    width: 300px;
+    max-height: 200px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    margin-top: 5px; /* Add space between input and dropdown */
+}
+
+.suggestion-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.suggestion-item:hover {
+    background-color: var(--background-color);
+}
+
+.weather-card {
+    background-color: var(--card-background);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+}
+
+.weather-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.weather-main {
+    text-align: center;
+}
+
+.weather-main img {
+    width: 100px;
+    height: 100px;
+}
+
+.temperature {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.forecast-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.forecast-item {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+.additional-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--secondary-color);
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .search-container {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+    
+    input[type="text"],
+    .suggestions-dropdown {
+        width: 100%;
+    }
+    
+    .weather-content {
+        grid-template-columns: 1fr;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .temperature {
+        font-size: 2rem;
+    }
+
+    .suggestions-dropdown {
+        width: 100%;
+        left: 37%;
+        transform: none;
+    }
+    
+    button {
+        width: 100%;
+    }
+}
+
+.weather-main {
+    min-height: 100px; /* Maintain layout height without icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#weather-icon {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}

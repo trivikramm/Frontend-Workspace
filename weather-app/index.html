@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-cloud-sun"></i> Weather Dashboard</h1>
+            <div class="search-container">
+                <input type="text" id="city-input" placeholder="Enter city name">
+                <div id="city-suggestions" class="suggestions-dropdown hidden"></div>
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+                <button id="unit-toggle">°C / °F</button>
+            </div>
+        </header>
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+        </div>
+        <div id="error-message" class="hidden"></div>
+        <main>
+            <section id="current-weather" class="weather-card">
+                <h2>Current Weather</h2>
+                <div id="weather-details" class="weather-content">
+                    <div class="weather-main">
+                        <img id="weather-icon" src="" alt="Weather icon">
+                        <div class="temperature">
+                            <span id="current-temp"></span>
+                            <span id="feels-like"></span>
+                        </div>
+                    </div>
+                    <div class="weather-info">
+                        <p id="weather-description"></p>
+                        <p id="humidity"></p>
+                        <p id="wind-speed"></p>
+                        <p id="pressure"></p>
+                    </div>
+                </div>
+            </section>
+            <section id="forecast" class="weather-card">
+                <h2>5-Day Forecast</h2>
+                <div id="forecast-details" class="forecast-container"></div>
+            </section>
+<section id="additional-info" class="weather-card">
+    <h2>Additional Information</h2>
+    <div class="additional-content">
+    </div>
+</section>
+        </main>
+    </div>
+    <footer>
+        <p>Created with <i class="fas fa-heart"></i> | Weather data from OpenWeather</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
