@@ -1,0 +1,1529 @@
+Skip to content
+You said:
+
+React Essentials - Set 1
+trivikram100699@gmail.com Switch account
+ 
+Not shared
+ 
+MCQs
+What does the useState hook return?
+o a) Object
+o b) Array
+o c) String
+o d) Number
+What is the primary purpose of useEffect?
+o a) Handle form inputs
+o b) Update state
+o c) Perform side effects
+o d) Add styles
+Which hook is used to manage lifecycle behavior?
+o a) useRef
+o b) useState
+o c) useReducer
+o d) useEffect
+Which of the following best describes a React component?
+o a) HTML block
+o b) CSS styling
+o c) JavaScript function/class returning JSX
+o d) JSON object
+How do you prevent default behavior of form submission?
+o a) event.stop()
+o b) event.preventDefault()
+o c) prevent.form()
+o d) stopDefault()
+Which lifecycle phase does useEffect simulate?
+o a) Mount only
+o b) Mount + Update
+o c) Unmount only
+o d) All of the above
+What is a controlled component?
+o a) Uses useContext
+o b) Has its state controlled by parent
+o c) Takes input from useEffect
+o d) Doesn't use props
+What is the default return type of a React component?
+o a) HTML
+o b) JSX
+o c) String
+o d) Object
+What hook replaces lifecycle methods in functional components?
+o a) useContext
+o b) useEffect
+o c) useRef
+o d) useCallback
+What’s the correct way to update a state array?
+o a) setState(array.push(item))
+o b) setArray([...array, item])
+o c) array.push(item)
+o d) array.add(item)
+Never submit passwords through Google Forms.
+This content is neither created nor endorsed by Google. - Contact form owner - Terms of Service - Privacy Policy
+Does this form look suspicious? Report
+
+Google Forms
+ChatGPT said:
+Here are the correct answers to the React Essentials - Set 1 MCQs:
+
+What does the useState hook return?
+✅ b) Array
+
+It returns a pair: the current state and a function to update it (usually [state, setState]).
+
+What is the primary purpose of useEffect?
+✅ c) Perform side effects
+
+useEffect is for side effects like fetching data, manipulating the DOM, or setting up subscriptions.
+
+Which hook is used to manage lifecycle behavior?
+✅ d) useEffect
+
+useEffect can mimic componentDidMount, componentDidUpdate, and componentWillUnmount.
+
+Which of the following best describes a React component?
+✅ c) JavaScript function/class returning JSX
+
+Components are functions or classes that return JSX to define UI.
+
+How do you prevent default behavior of form submission?
+✅ b) event.preventDefault()
+
+This stops the form from submitting and reloading the page.
+
+Which lifecycle phase does useEffect simulate?
+✅ d) All of the above
+
+useEffect can simulate mount, update, and unmount depending on how you use dependencies and return a cleanup function.
+
+What is a controlled component?
+✅ b) Has its state controlled by parent
+
+A controlled component receives its value and updates via props, typically managed by state in the parent.
+
+What is the default return type of a React component?
+✅ b) JSX
+
+Components return JSX, which React transforms into UI.
+
+What hook replaces lifecycle methods in functional components?
+✅ b) useEffect
+
+It replaces lifecycle methods like componentDidMount, componentDidUpdate, etc.
+
+What’s the correct way to update a state array?
+✅ b) setArray([...array, item])
+
+Spread syntax creates a new array with the item added, which is how React state should be updated (immutably).
+
+Let me know if you'd like a printable version or a quiz-style format!
+
+You said:
+
+React Essentials - Set 1
+trivikram100699@gmail.com Switch account
+ 
+Not shared
+ 
+Simple Hands-on Tasks
+Create a functional component that renders "Hello React".
+Create a component with a button that toggles text visibility using useState.
+Create a form with a text input and submit button, log value on submit.
+Create a Counter component with + and - buttons using useState.
+Create a useEffect to log "Component Mounted" on initial render.
+Never submit passwords through Google Forms.
+This content is neither created nor endorsed by Google. - Contact form owner - Terms of Service - Privacy Policy
+Does this form look suspicious? Report
+
+Google Forms
+ChatGPT said:
+Here’s a complete set of React Essentials - Set 1: Simple Hands-on Tasks, each implemented using functional components and hooks.
+
+✅ 1. Component that renders "Hello React"
+import React from 'react';
+
+function HelloReact() {
+  return <h1>Hello React</h1>;
+}
+
+export default HelloReact;
+✅ 2. Button that toggles text visibility using useState
+import React, { useState } from 'react';
+
+function ToggleText() {
+  const [isVisible, setIsVisible] = useState(true);
+
+  return (
+    <div>
+      <button onClick={() => setIsVisible(!isVisible)}>
+        Toggle Text
+      </button>
+      {isVisible && <p>This is some text!</p>}
+    </div>
+  );
+}
+
+export default ToggleText;
+✅ 3. Form with text input and submit button that logs value
+import React, { useState } from 'react';
+
+function SimpleForm() {
+  const [input, setInput] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Submitted value:', input);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        placeholder="Enter something"
+      />
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+
+export default SimpleForm;
+✅ 4. Counter component with + and - buttons using useState
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <h2>Count: {count}</h2>
+      <button onClick={() => setCount(count - 1)}>-</button>
+      <button onClick={() => setCount(count + 1)}>+</button>
+    </div>
+  );
+}
+
+export default Counter;
+✅ 5. useEffect to log "Component Mounted" on initial render
+import React, { useEffect } from 'react';
+
+function LogOnMount() {
+  useEffect(() => {
+    console.log('Component Mounted');
+  }, []); // Empty dependency array means it runs once on mount
+
+  return <div>Check the console for log.</div>;
+}
+
+export default LogOnMount;
+If you’re working in a single file like App.js, you can test these by importing and rendering them inside your <App /> component. Would you like a combined version of these in one file?
+
+You said:
+
+React Essentials - Set 1
+trivikram100699@gmail.com Switch account
+ 
+Not shared
+ 
+Advanced/Complex Hands-on Tasks
+Create a login form with email and password fields. Validate both fields before submission. 
+Create a ToDo app with add, remove, and complete functionalities. 
+Implement a dynamic theme switcher using useState and buttons. 
+Create a list component that fetches and displays data using useEffect.
+Create a modal that opens on button click and closes on outside click.
+Never submit passwords through Google Forms.
+This content is neither created nor endorsed by Google. - Contact form owner - Terms of Service - Privacy Policy
+Does this form look suspicious? Report
+
+Google Forms
+
+without comments
+ChatGPT said:
+Here are the solutions for the Advanced/Complex Hands-on Tasks in React Essentials - Set 1, provided without comments as requested:
+
+✅ 1. Login form with validation
+import React, { useState } from 'react';
+
+function LoginForm() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!email || !password) {
+      alert('Both fields are required');
+      return;
+    }
+    alert(`Email: ${email}, Password: ${password}`);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
+      <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+      <button type="submit">Login</button>
+    </form>
+  );
+}
+
+export default LoginForm;
+✅ 2. ToDo app with add, remove, complete
+import React, { useState } from 'react';
+
+function TodoApp() {
+  const [task, setTask] = useState('');
+  const [todos, setTodos] = useState([]);
+
+  const addTodo = () => {
+    if (!task.trim()) return;
+    setTodos([...todos, { text: task, completed: false }]);
+    setTask('');
+  };
+
+  const toggleComplete = (index) => {
+    const updated = [...todos];
+    updated[index].completed = !updated[index].completed;
+    setTodos(updated);
+  };
+
+  const removeTodo = (index) => {
+    setTodos(todos.filter((_, i) => i !== index));
+  };
+
+  return (
+    <div>
+      <input value={task} onChange={(e) => setTask(e.target.value)} placeholder="Add a task" />
+      <button onClick={addTodo}>Add</button>
+      <ul>
+        {todos.map((todo, i) => (
+          <li key={i} style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
+            {todo.text}
+            <button onClick={() => toggleComplete(i)}>Complete</button>
+            <button onClick={() => removeTodo(i)}>Remove</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default TodoApp;
+✅ 3. Dynamic theme switcher
+import React, { useState } from 'react';
+
+function ThemeSwitcher() {
+  const [dark, setDark] = useState(false);
+
+  const theme = {
+    background: dark ? '#333' : '#fff',
+    color: dark ? '#fff' : '#000',
+    padding: '20px',
+    textAlign: 'center'
+  };
+
+  return (
+    <div style={theme}>
+      <p>{dark ? 'Dark Mode' : 'Light Mode'}</p>
+      <button onClick={() => setDark(!dark)}>Toggle Theme</button>
+    </div>
+  );
+}
+
+export default ThemeSwitcher;
+✅ 4. List component with data fetching
+import React, { useState, useEffect } from 'react';
+
+function DataList() {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/posts?_limit=5')
+      .then(res => res.json())
+      .then(data => setItems(data));
+  }, []);
+
+  return (
+    <ul>
+      {items.map(item => (
+        <li key={item.id}>{item.title}</li>
+      ))}
+    </ul>
+  );
+}
+
+export default DataList;
+✅ 5. Modal with open and outside click close
+import React, { useState, useRef, useEffect } from 'react';
+
+function ModalApp() {
+  const [isOpen, setIsOpen] = useState(false);
+  const modalRef = useRef();
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (modalRef.current && !modalRef.current.contains(e.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  return (
+    <div>
+      <button onClick={() => setIsOpen(true)}>Open Modal</button>
+      {isOpen && (
+        <div style={{
+          position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+          backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', justifyContent: 'center', alignItems: 'center'
+        }}>
+          <div ref={modalRef} style={{ background: '#fff', padding: 20 }}>
+            <p>This is a modal</p>
+            <button onClick={() => setIsOpen(false)}>Close</button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default ModalApp;
+Let me know if you'd like a GitHub-ready version, combined demo, or to test these with a UI library like Material-UI or Tailwind.
+
+You said:
+
+React Essentials - Set 2
+trivikram100699@gmail.com Switch account
+ 
+Not shared
+ 
+MCQs
+What triggers a re-render in a component?
+o a) DOM change
+o b) JSX change
+o c) State or prop change
+o d) CSS update
+How do you create a component?
+o a) Using JSX only
+o b) Using functions or classes
+o c) Using CSS
+o d) Using div
+How to conditionally render in JSX?
+o a) if/else block
+o b) ternary or &&
+o c) switch case
+o d) Only return()
+What is JSX?
+o a) JavaScript Syntax Extension
+o b) JSON
+o c) XML
+o d) Java Stylesheet Extension
+What does useState return?
+o a) A value and a method
+o b) Two functions
+o c) A state and setter array
+o d) Both a and c
+How to use useEffect to run only once?
+o a) useEffect(fn)
+o b) useEffect(fn, [])
+o c) useEffect(fn, [state])
+o d) useEffect(fn, null)
+What is lifting state up?
+o a) Passing state to child
+o b) Managing state in parent to share between children
+o c) Using Redux
+o d) Refactoring
+What is the role of keys in React list rendering?
+o a) Add styling
+o b) Track element identity
+o c) Bind values
+o d) For accessibility
+What causes useEffect to rerun?
+o a) Button click
+o b) Dependencies change
+o c) Component unmount
+o d) Any prop
+What’s the result of useState("0")?
+o a) 0
+o b) "0"
+o c) undefined
+o d) null
+Never submit passwords through Google Forms.
+This content is neither created nor endorsed by Google. - Contact form owner - Terms of Service - Privacy Policy
+Does this form look suspicious? Report
+
+Google Forms
+ChatGPT said:
+Here are the correct answers to the React Essentials - Set 2 MCQs:
+
+What triggers a re-render in a component?
+✅ c) State or prop change
+
+How do you create a component?
+✅ b) Using functions or classes
+
+How to conditionally render in JSX?
+✅ b) ternary or &&
+
+What is JSX?
+✅ a) JavaScript Syntax Extension
+
+What does useState return?
+✅ d) Both a and c
+(It returns a state value and a setter function in an array)
+
+How to use useEffect to run only once?
+✅ b) useEffect(fn, [])
+
+What is lifting state up?
+✅ b) Managing state in parent to share between children
+
+What is the role of keys in React list rendering?
+✅ b) Track element identity
+
+What causes useEffect to rerun?
+✅ b) Dependencies change
+
+What’s the result of useState("0")?
+✅ b) "0"
+
+Let me know if you'd like an auto-fill version for Google Forms or a printable PDF of these.
+
+You said:
+
+React Essentials - Set 2
+trivikram100699@gmail.com Switch account
+ 
+Not shared
+ 
+Simple Hands-on Tasks
+Create a component with a checkbox and show "Checked" if true. 
+Create a component with useState that counts characters in a text field. 
+Create a dropdown and store selected option using state..
+Create a toggleable password input field.
+Add useEffect to count how many times a button was clicked.
+Never submit passwords through Google Forms.
+This content is neither created nor endorsed by Google. - Contact form owner - Terms of Service - Privacy Policy
+Does this form look suspicious? Report
+
+Google Forms
+ChatGPT said:
+Here are the solutions for React Essentials - Set 2 – Simple Hands-on Tasks, implemented with functional components and hooks, and written cleanly without extra comments:
+
+✅ 1. Checkbox component that shows "Checked" if true
+import React, { useState } from 'react';
+
+function CheckboxComponent() {
+  const [checked, setChecked] = useState(false);
+
+  return (
+    <div>
+      <input
+        type="checkbox"
+        checked={checked}
+        onChange={() => setChecked(!checked)}
+      />
+      {checked && <p>Checked</p>}
+    </div>
+  );
+}
+
+export default CheckboxComponent;
+✅ 2. Text input that counts characters
+import React, { useState } from 'react';
+
+function CharacterCounter() {
+  const [text, setText] = useState('');
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        placeholder="Type something..."
+      />
+      <p>Character count: {text.length}</p>
+    </div>
+  );
+}
+
+export default CharacterCounter;
+✅ 3. Dropdown with state to store selected option
+import React, { useState } from 'react';
+
+function DropdownSelector() {
+  const [selected, setSelected] = useState('');
+
+  return (
+    <div>
+      <select value={selected} onChange={(e) => setSelected(e.target.value)}>
+        <option value="">Select option</option>
+        <option value="React">React</option>
+        <option value="Vue">Vue</option>
+        <option value="Angular">Angular</option>
+      </select>
+      <p>Selected: {selected}</p>
+    </div>
+  );
+}
+
+export default DropdownSelector;
+✅ 4. Toggleable password input field
+import React, { useState } from 'react';
+
+function TogglePasswordInput() {
+  const [show, setShow] = useState(false);
+  const [password, setPassword] = useState('');
+
+  return (
+    <div>
+      <input
+        type={show ? 'text' : 'password'}
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="Enter password"
+      />
+      <button onClick={() => setShow(!show)}>
+        {show ? 'Hide' : 'Show'}
+      </button>
+    </div>
+  );
+}
+
+export default TogglePasswordInput;
+✅ 5. useEffect to count how many times a button was clicked
+import React, { useState, useEffect } from 'react';
+
+function ClickCounter() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log(`Button clicked ${count} times`);
+  }, [count]);
+
+  return (
+    <div>
+      <button onClick={() => setCount(count + 1)}>
+        Click Me
+      </button>
+      <p>Clicked: {count}</p>
+    </div>
+  );
+}
+
+export default ClickCounter;
+Let me know if you'd like to bundle these into one App.js, create a CodeSandbox/StackBlitz version, or convert to TypeScript.
+
+You said:
+
+React Essentials - Set 2
+trivikram100699@gmail.com Switch account
+ 
+Not shared
+ 
+Advanced/Complex Hands-on Tasks
+Create a login form with validations for email format and minimum 6-char password. 
+Build a notes app with title and content. Add/save/delete notes. 
+Create a component that fetches API data and filters based on input. 
+Create a dark/light theme switcher using context and useState. 
+Implement a modal login popup with form validation.
+Never submit passwords through Google Forms.
+This content is neither created nor endorsed by Google. - Contact form owner - Terms of Service - Privacy Policy
+Does this form look suspicious? Report
+
+Google Forms
+
+without comments
+ChatGPT said:
+Here are the React Essentials - Set 2: Advanced/Complex Hands-on Tasks, implemented using functional components, hooks, and context (where needed), provided without comments as requested.
+
+✅ 1. Login form with email format and min 6-character password validation
+import React, { useState } from 'react';
+
+function LoginForm() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const emailValid = /\S+@\S+\.\S+/.test(email);
+    const passwordValid = password.length >= 6;
+    if (!emailValid || !passwordValid) {
+      alert('Invalid email or password');
+      return;
+    }
+    alert('Login successful');
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
+      <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+      <button type="submit">Login</button>
+    </form>
+  );
+}
+
+export default LoginForm;
+✅ 2. Notes app with add/save/delete
+import React, { useState } from 'react';
+
+function NotesApp() {
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
+  const [notes, setNotes] = useState([]);
+
+  const addNote = () => {
+    if (!title.trim() || !content.trim()) return;
+    setNotes([...notes, { title, content }]);
+    setTitle('');
+    setContent('');
+  };
+
+  const deleteNote = (index) => {
+    setNotes(notes.filter((_, i) => i !== index));
+  };
+
+  return (
+    <div>
+      <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Title" />
+      <textarea value={content} onChange={(e) => setContent(e.target.value)} placeholder="Content" />
+      <button onClick={addNote}>Add Note</button>
+      {notes.map((note, i) => (
+        <div key={i}>
+          <h4>{note.title}</h4>
+          <p>{note.content}</p>
+          <button onClick={() => deleteNote(i)}>Delete</button>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default NotesApp;
+✅ 3. Component that fetches API data and filters it
+import React, { useState, useEffect } from 'react';
+
+function FilteredData() {
+  const [data, setData] = useState([]);
+  const [query, setQuery] = useState('');
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(res => res.json())
+      .then(setData);
+  }, []);
+
+  const filtered = data.filter(item => item.name.toLowerCase().includes(query.toLowerCase()));
+
+  return (
+    <div>
+      <input placeholder="Search by name" value={query} onChange={(e) => setQuery(e.target.value)} />
+      <ul>
+        {filtered.map(user => (
+          <li key={user.id}>{user.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default FilteredData;
+✅ 4. Dark/light theme switcher using context and useState
+import React, { createContext, useContext, useState } from 'react';
+
+const ThemeContext = createContext();
+
+function ThemeProvider({ children }) {
+  const [dark, setDark] = useState(false);
+  const toggleTheme = () => setDark(!dark);
+  return (
+    <ThemeContext.Provider value={{ dark, toggleTheme }}>
+      <div style={{
+        background: dark ? '#333' : '#fff',
+        color: dark ? '#fff' : '#000',
+        minHeight: '100vh',
+        padding: '20px'
+      }}>
+        {children}
+      </div>
+    </ThemeContext.Provider>
+  );
+}
+
+function ThemeToggler() {
+  const { dark, toggleTheme } = useContext(ThemeContext);
+  return <button onClick={toggleTheme}>{dark ? 'Light Mode' : 'Dark Mode'}</button>;
+}
+
+export { ThemeProvider, ThemeToggler };
+✅ 5. Modal login popup with validation
+import React, { useState, useRef, useEffect } from 'react';
+
+function LoginModal() {
+  const [open, setOpen] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const modalRef = useRef();
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (modalRef.current && !modalRef.current.contains(e.target)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const valid = /\S+@\S+\.\S+/.test(email) && password.length >= 6;
+    if (!valid) {
+      alert('Invalid credentials');
+      return;
+    }
+    alert('Logged in');
+    setOpen(false);
+  };
+
+  return (
+    <div>
+      <button onClick={() => setOpen(true)}>Open Login</button>
+      {open && (
+        <div style={{
+          position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+          backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center'
+        }}>
+          <div ref={modalRef} style={{ background: '#fff', padding: 20 }}>
+            <form onSubmit={handleSubmit}>
+              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
+              <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+              <button type="submit">Login</button>
+            </form>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default LoginModal;
+Let me know if you'd like all these wrapped in a working demo app or exported to a GitHub repo.
+
+You said:
+
+React Essentials - Set 3
+trivikram100699@gmail.com Switch account
+ 
+Not shared
+ 
+MCQs
+What does useEffect(fn, []) mean?
+o a) Run every time
+o b) Never run
+o c) Run once after initial render
+o d) Run on unmount only
+What are side effects?
+o a) Internal rendering
+o b) Tasks outside component lifecycle
+o c) Input handling
+o d) Inline functions
+How do you bind input with state in React?
+o a) onSubmit
+o b) controlled components
+o c) useMemo
+o d) return()
+What is an uncontrolled component?
+o a) Uses state
+o b) Uses refs
+o c) Uses callback props
+o d) Re-renders
+When does useEffect cleanup function run?
+o a) On mount
+o b) On state update
+o c) On unmount
+o d) On every render
+Can you use multiple states in a single component?
+o a) No
+o b) Only two
+o c) Yes
+o d) Only with useReducer
+What is default behavior of a form submit button?
+o a) Save to backend
+o b) Reload page
+o c) Validate inputs
+o d) Do nothing
+What does JSX compile to?
+o a) HTML
+o b) XML
+o c) React.createElement
+o d) DOM tree
+How to avoid infinite loop in useEffect?
+o a) Avoid setting state
+o b) Use empty dependency array
+o c) Use setTimeout
+o d) Use useMemo
+How do you conditionally apply class in React?
+o a) style prop only
+o b) class=""
+o c) Ternary operator inside className
+o d) setClass()
+Never submit passwords through Google Forms.
+This content is neither created nor endorsed by Google. - Contact form owner - Terms of Service - Privacy Policy
+Does this form look suspicious? Report
+
+Google Forms
+ChatGPT said:
+Here are the correct answers for React Essentials - Set 3 (MCQs):
+
+What does useEffect(fn, []) mean?
+✅ c) Run once after initial render
+
+What are side effects?
+✅ b) Tasks outside component lifecycle
+
+How do you bind input with state in React?
+✅ b) controlled components
+
+What is an uncontrolled component?
+✅ b) Uses refs
+
+When does useEffect cleanup function run?
+✅ c) On unmount
+
+Can you use multiple states in a single component?
+✅ c) Yes
+
+What is default behavior of a form submit button?
+✅ b) Reload page
+
+What does JSX compile to?
+✅ c) React.createElement
+
+How to avoid infinite loop in useEffect?
+✅ b) Use empty dependency array
+
+How do you conditionally apply class in React?
+✅ c) Ternary operator inside className
+
+Let me know if you want the answers in a form-friendly layout or exported as a PDF/CSV.
+
+You said:
+
+React Essentials - Set 3
+trivikram100699@gmail.com Switch account
+ 
+Not shared
+ 
+Simple Hands-on Tasks
+Build a name input field and display live value below. 
+Add a button to increment a counter by 2. 
+Create a dropdown to choose favorite fruit, show selection. 
+Use useEffect to show alert when page loads. 
+Create a list from an array using .map() and display it.
+Never submit passwords through Google Forms.
+This content is neither created nor endorsed by Google. - Contact form owner - Terms of Service - Privacy Policy
+Does this form look suspicious? Report
+
+Google Forms
+ChatGPT said:
+Here are the React Essentials - Set 3 – Simple Hands-on Tasks, written with functional components and hooks:
+
+✅ 1. Name input field with live display
+import React, { useState } from 'react';
+
+function NameInput() {
+  const [name, setName] = useState('');
+
+  return (
+    <div>
+      <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Enter your name" />
+      <p>Name: {name}</p>
+    </div>
+  );
+}
+
+export default NameInput;
+✅ 2. Button to increment counter by 2
+import React, { useState } from 'react';
+
+function CounterByTwo() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 2)}>+2</button>
+    </div>
+  );
+}
+
+export default CounterByTwo;
+✅ 3. Dropdown to choose favorite fruit
+import React, { useState } from 'react';
+
+function FruitSelector() {
+  const [fruit, setFruit] = useState('');
+
+  return (
+    <div>
+      <select value={fruit} onChange={(e) => setFruit(e.target.value)}>
+        <option value="">Select fruit</option>
+        <option value="Apple">Apple</option>
+        <option value="Banana">Banana</option>
+        <option value="Mango">Mango</option>
+      </select>
+      <p>Selected: {fruit}</p>
+    </div>
+  );
+}
+
+export default FruitSelector;
+✅ 4. useEffect to show alert on page load
+import React, { useEffect } from 'react';
+
+function PageLoadAlert() {
+  useEffect(() => {
+    alert('Page loaded');
+  }, []);
+
+  return <div>Welcome!</div>;
+}
+
+export default PageLoadAlert;
+✅ 5. Display list using .map()
+import React from 'react';
+
+function ListDisplay() {
+  const items = ['React', 'Vue', 'Angular'];
+
+  return (
+    <ul>
+      {items.map((item, i) => (
+        <li key={i}>{item}</li>
+      ))}
+    </ul>
+  );
+}
+
+export default ListDisplay;
+Let me know if you'd like to combine them into one project or need TypeScript versions.
+
+You said:
+
+React Essentials - Set 3
+trivikram100699@gmail.com Switch account
+ 
+Not shared
+ 
+Advanced/Complex Hands-on Tasks
+Create a sign-up form with name, email, password and confirm password fields with validation. 
+Create a movie list component that fetches from API and displays poster + title. 
+Build a stopwatch with start, pause, reset using useState and useEffect. 
+Build a custom hook useLocalStorageState to persist state. 
+Create a component that tracks mouse position in real-time using useEffect.
+Never submit passwords through Google Forms.
+This content is neither created nor endorsed by Google. - Contact form owner - Terms of Service - Privacy Policy
+Does this form look suspicious? Report
+
+Google Forms
+ChatGPT said:
+Here are the solutions for React Essentials - Set 3: Advanced/Complex Hands-on Tasks, using functional components, hooks, and clean structure:
+
+✅ 1. Sign-up form with validation
+import React, { useState } from 'react';
+
+function SignupForm() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirm, setConfirm] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const emailValid = /\S+@\S+\.\S+/.test(email);
+    const passwordValid = password.length >= 6;
+    const passwordsMatch = password === confirm;
+    if (!name || !emailValid || !passwordValid || !passwordsMatch) {
+      alert('Validation failed');
+      return;
+    }
+    alert('Sign-up successful');
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+      <input placeholder="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+      <input placeholder="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+      <input placeholder="Confirm Password" type="password" value={confirm} onChange={(e) => setConfirm(e.target.value)} />
+      <button type="submit">Sign Up</button>
+    </form>
+  );
+}
+
+export default SignupForm;
+✅ 2. Movie list fetching from API and displaying poster + title
+import React, { useEffect, useState } from 'react';
+
+function MovieList() {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    fetch('https://api.tvmaze.com/shows')
+      .then(res => res.json())
+      .then(data => setMovies(data.slice(0, 10)));
+  }, []);
+
+  return (
+    <div>
+      {movies.map(movie => (
+        <div key={movie.id}>
+          <h4>{movie.name}</h4>
+          <img src={movie.image?.medium} alt={movie.name} />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default MovieList;
+✅ 3. Stopwatch (start, pause, reset)
+import React, { useState, useEffect } from 'react';
+
+function Stopwatch() {
+  const [time, setTime] = useState(0);
+  const [running, setRunning] = useState(false);
+
+  useEffect(() => {
+    let timer;
+    if (running) {
+      timer = setInterval(() => setTime((t) => t + 1), 1000);
+    }
+    return () => clearInterval(timer);
+  }, [running]);
+
+  return (
+    <div>
+      <h2>{time}s</h2>
+      <button onClick={() => setRunning(true)}>Start</button>
+      <button onClick={() => setRunning(false)}>Pause</button>
+      <button onClick={() => { setTime(0); setRunning(false); }}>Reset</button>
+    </div>
+  );
+}
+
+export default Stopwatch;
+✅ 4. Custom hook: useLocalStorageState
+import { useState, useEffect } from 'react';
+
+function useLocalStorageState(key, initial) {
+  const [value, setValue] = useState(() => {
+    const stored = localStorage.getItem(key);
+    return stored ? JSON.parse(stored) : initial;
+  });
+
+  useEffect(() => {
+    localStorage.setItem(key, JSON.stringify(value));
+  }, [value]);
+
+  return [value, setValue];
+}
+
+export default useLocalStorageState;
+✅ 5. Track mouse position using useEffect
+import React, { useState, useEffect } from 'react';
+
+function MouseTracker() {
+  const [pos, setPos] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMove = (e) => setPos({ x: e.clientX, y: e.clientY });
+    window.addEventListener('mousemove', handleMove);
+    return () => window.removeEventListener('mousemove', handleMove);
+  }, []);
+
+  return (
+    <div>
+      <p>X: {pos.x}</p>
+      <p>Y: {pos.y}</p>
+    </div>
+  );
+}
+
+export default MouseTracker;
+Let me know if you'd like all components combined in a working project or deployed via StackBlitz/CodeSandbox.
+
+You said:
+
+React Essentials - Set 4
+trivikram100699@gmail.com Switch account
+ 
+Not shared
+ 
+MCQs
+Which prop is required to uniquely identify list items?
+o a) id
+o b) key
+o c) index
+o d) name
+What does useState("hello") do?
+o a) Sets state to null
+o b) Sets initial state to hello
+o c) Returns undefined
+o d) Updates props
+How do you update a value in an object using state?
+o a) setState({...obj, key: value})
+o b) obj.key = value
+o c) obj.push(value)
+o d) updateState()
+What does dependency array in useEffect control?
+o a) DOM rendering
+o b) Variable scoping
+o c) When effect runs
+o d) Styling logic
+How to reuse stateful logic?
+o a) useEffect
+o b) JSX loop
+o c) Custom hooks
+o d) setInterval
+What’s a pure component?
+o a) Always updates
+o b) Ignores props
+o c) Only updates if props/state change
+o d) Stateless
+What is the virtual DOM?
+o a) Real HTML
+o b) Shadow copy of DOM
+o c) HTML string
+o d) Node reference
+Which is the correct way to declare a component?
+o a) function MyComp() {}
+o b) def MyComp()
+o c) comp MyComp = () => {}
+o d) element MyComp = {}
+What is the use of cleanup function in useEffect?
+o a) UI cleanup
+o b) Timer/Subscription cleanup
+o c) Delete cookies
+o d) Reset state
+Why use defaultValue in uncontrolled inputs?
+o a) For sync rendering
+o b) For performance
+o c) For initial value only
+o d) For validation
+Never submit passwords through Google Forms.
+This content is neither created nor endorsed by Google. - Contact form owner - Terms of Service - Privacy Policy
+Does this form look suspicious? Report
+
+Google Forms
+ChatGPT said:
+Here are the correct answers for React Essentials - Set 4 (MCQs):
+
+Which prop is required to uniquely identify list items?
+✅ b) key
+
+What does useState("hello") do?
+✅ b) Sets initial state to hello
+
+How do you update a value in an object using state?
+✅ a) setState({...obj, key: value})
+
+What does dependency array in useEffect control?
+✅ c) When effect runs
+
+How to reuse stateful logic?
+✅ c) Custom hooks
+
+What’s a pure component?
+✅ c) Only updates if props/state change
+
+What is the virtual DOM?
+✅ b) Shadow copy of DOM
+
+Which is the correct way to declare a component?
+✅ a) function MyComp() {}
+
+What is the use of cleanup function in useEffect?
+✅ b) Timer/Subscription cleanup
+
+Why use defaultValue in uncontrolled inputs?
+✅ c) For initial value only
+
+Let me know if you'd like the Set 4 tasks or want the full quiz exported as a Google Sheet, CSV, or PDF.
+
+You said:
+
+React Essentials - Set 4
+trivikram100699@gmail.com Switch account
+ 
+Not shared
+ 
+Simple Hands-on Tasks
+Create a counter that resets after reaching 10. 
+Create a profile card component using props. 
+Add a button that toggles between two background colors. 
+Render a list of technologies from array of strings. 
+Create a form with radio buttons for selecting gender.
+Never submit passwords through Google Forms.
+This content is neither created nor endorsed by Google. - Contact form owner - Terms of Service - Privacy Policy
+Does this form look suspicious? Report
+
+Google Forms
+ChatGPT said:
+Here are the React Essentials – Set 4: Simple Hands-on Tasks, implemented using functional components and hooks:
+
+✅ 1. Counter that resets after reaching 10
+import React, { useState } from 'react';
+
+function ResetCounter() {
+  const [count, setCount] = useState(0);
+
+  const handleClick = () => {
+    setCount((prev) => (prev >= 10 ? 0 : prev + 1));
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={handleClick}>Increment</button>
+    </div>
+  );
+}
+
+export default ResetCounter;
+✅ 2. Profile card using props
+import React from 'react';
+
+function ProfileCard({ name, role, avatar }) {
+  return (
+    <div style={{ border: '1px solid #ccc', padding: '10px', width: '200px' }}>
+      <img src={avatar} alt={name} width="100" />
+      <h3>{name}</h3>
+      <p>{role}</p>
+    </div>
+  );
+}
+
+export default ProfileCard;
+✅ 3. Toggle between two background colors
+import React, { useState } from 'react';
+
+function ColorToggle() {
+  const [dark, setDark] = useState(false);
+
+  return (
+    <div style={{ backgroundColor: dark ? '#333' : '#ccc', color: dark ? '#fff' : '#000', padding: '20px' }}>
+      <button onClick={() => setDark(!dark)}>Toggle Background</button>
+    </div>
+  );
+}
+
+export default ColorToggle;
+✅ 4. Render list of technologies from string array
+import React from 'react';
+
+function TechnologyList() {
+  const tech = ['React', 'Node.js', 'Express', 'MongoDB'];
+
+  return (
+    <ul>
+      {tech.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </ul>
+  );
+}
+
+export default TechnologyList;
+✅ 5. Form with radio buttons for gender selection
+import React, { useState } from 'react';
+
+function GenderForm() {
+  const [gender, setGender] = useState('');
+
+  return (
+    <form>
+      <label>
+        <input type="radio" name="gender" value="Male" onChange={(e) => setGender(e.target.value)} />
+        Male
+      </label>
+      <label>
+        <input type="radio" name="gender" value="Female" onChange={(e) => setGender(e.target.value)} />
+        Female
+      </label>
+      <p>Selected: {gender}</p>
+    </form>
+  );
+}
+
+export default GenderForm;
+Let me know if you'd like these bundled into one demo app or shared as a GitHub repo.
+
+You said:
+
+React Essentials - Set 4
+trivikram100699@gmail.com Switch account
+ 
+Not shared
+ 
+Advanced/Complex Hands-on Tasks
+Build a login/signup toggle form with validations.
+Create a reusable input component with label and error display. 
+Fetch user list from API and implement pagination. 
+Build a scroll-to-top button using useEffect. 
+Create a timer that counts down from a given number using state and effect.
+Never submit passwords through Google Forms.
+This content is neither created nor endorsed by Google. - Contact form owner - Terms of Service - Privacy Policy
+Does this form look suspicious? Report
+
+Google Forms
+ChatGPT said:
+Here are the React Essentials – Set 4: Advanced/Complex Hands-on Tasks, implemented using functional components, hooks, and simple validation:
+
+✅ 1. Login/Signup toggle form with validation
+import React, { useState } from 'react';
+
+function AuthForm() {
+  const [isLogin, setIsLogin] = useState(true);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
+  const [error, setError] = useState('');
+
+  const validate = () => {
+    if (!/\S+@\S+\.\S+/.test(email)) return 'Invalid email';
+    if (password.length < 6) return 'Password must be at least 6 characters';
+    if (!isLogin && name.trim() === '') return 'Name is required';
+    return '';
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const err = validate();
+    if (err) {
+      setError(err);
+      return;
+    }
+    alert(isLogin ? 'Logged in!' : 'Signed up!');
+    setError('');
+  };
+
+  return (
+    <div>
+      <h2>{isLogin ? 'Login' : 'Sign Up'}</h2>
+      <form onSubmit={handleSubmit}>
+        {!isLogin && <input placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />}
+        <input placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        {error && <p style={{ color: 'red' }}>{error}</p>}
+        <button type="submit">{isLogin ? 'Login' : 'Sign Up'}</button>
+      </form>
+      <button onClick={() => setIsLogin(!isLogin)}>
+        {isLogin ? 'Switch to Sign Up' : 'Switch to Login'}
+      </button>
+    </div>
+  );
+}
+
+export default AuthForm;
+✅ 2. Reusable input component with label and error
+import React from 'react';
+
+function InputField({ label, value, onChange, error, type = 'text' }) {
+  return (
+    <div>
+      <label>{label}</label>
+      <input type={type} value={value} onChange={onChange} />
+      {error && <span style={{ color: 'red' }}>{error}</span>}
+    </div>
+  );
+}
+
+export default InputField;
+✅ 3. Fetch user list from API with pagination
+import React, { useEffect, useState } from 'react';
+
+function PaginatedUsers() {
+  const [users, setUsers] = useState([]);
+  const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    fetch(`https://reqres.in/api/users?page=${page}`)
+      .then(res => res.json())
+      .then(data => setUsers(data.data));
+  }, [page]);
+
+  return (
+    <div>
+      {users.map(user => (
+        <div key={user.id}>
+          <p>{user.first_name} {user.last_name}</p>
+          <img src={user.avatar} alt={user.first_name} width="50" />
+        </div>
+      ))}
+      <button onClick={() => setPage((p) => Math.max(p - 1, 1))}>Prev</button>
+      <button onClick={() => setPage((p) => p + 1)}>Next</button>
+    </div>
+  );
+}
+
+export default PaginatedUsers;
+✅ 4. Scroll-to-top button using useEffect
+import React, { useEffect, useState } from 'react';
+
+function ScrollToTopButton() {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setShow(window.scrollY > 200);
+    };
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  return (
+    show && <button onClick={scrollToTop} style={{ position: 'fixed', bottom: 20, right: 20 }}>Top</button>
+  );
+}
+
+export default ScrollToTopButton;
+✅ 5. Countdown timer using state and effect
+import React, { useEffect, useState } from 'react';
+
+function CountdownTimer({ start = 10 }) {
+  const [time, setTime] = useState(start);
+
+  useEffect(() => {
+    if (time <= 0) return;
+    const timer = setTimeout(() => setTime(time - 1), 1000);
+    return () => clearTimeout(timer);
+  }, [time]);
+
+  return <h2>Countdown: {time}</h2>;
+}
+
+export default CountdownTimer;
+Let me know if you want these combined into a full project or deployed on a sandbox.
+
+
+Get smarter responses, upload files and images, and more.
+
+Log in
+
+Sign up for free
+
+
+Attach
+
+Search
+
+Voice
+No file chosenNo file chosen
+ChatGPT can make mistakes. Check important info. See Cookie Preferences.
+
